@@ -4,3 +4,4 @@ Swift: Orta
 Yaş: 22
 Yaşadığı Şehir/İlçe: Kocaeli/Derince
 Instagram: mertozseven
+email: mertozseven@outlook.com
