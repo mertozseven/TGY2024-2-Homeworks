@@ -131,3 +131,17 @@ func toRna(_ dna: String) -> String {
     }
     return finalString
 }
+
+/*
+ Two Fer
+ */
+
+func twoFer(name: String) {
+        print("One for \(name), one for me.")
+}
+let names = ["Alice", "Bohdan", "Zaphod"]
+
+func twoFer() {
+    print("One for you, one for me.")
+}
+
