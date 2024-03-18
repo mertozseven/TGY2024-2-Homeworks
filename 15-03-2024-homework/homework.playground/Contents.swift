@@ -35,11 +35,11 @@ plusMinus(number: 5)
 func makeItBigger(number: Int) -> String {
     var bigNumber = ""
     let numbString = String(number)
-    var finalNumber: String = ""
+    var finalNumber = ""
     var numberIsAdded: Bool = false
     for num in numbString {
-        guard let cha = num.wholeNumberValue else { break }
-        if cha < 5 && !numberIsAdded {
+        let charNum = num.wholeNumberValue!
+        if charNum < 5 && !numberIsAdded {
             finalNumber.append("5")
             finalNumber.append(num)
             numberIsAdded = true
