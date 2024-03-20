@@ -33,7 +33,6 @@ plusMinus(number: 5)
  */
 
 func makeItBigger(number: Int) -> String {
-    var bigNumber = ""
     let numbString = String(number)
     var finalNumber = ""
     var numberIsAdded: Bool = false
@@ -50,7 +49,7 @@ func makeItBigger(number: Int) -> String {
     return finalNumber
 }
 
-makeItBigger(number: 920)
+makeItBigger(number: 26)
 
 
 
