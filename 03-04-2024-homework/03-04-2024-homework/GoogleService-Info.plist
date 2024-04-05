@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCrxYAnSlRUIgWoGS8p-D44BYvj26TFY8Q</string>
+	<key>GCM_SENDER_ID</key>
+	<string>239593325635</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mertozseven.-3-04-2024-homework</string>
+	<key>PROJECT_ID</key>
+	<string>tgy2024-2-7bde5</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tgy2024-2-7bde5.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:239593325635:ios:ff1a00d9f0a79e769f80f6</string>
+</dict>
+</plist>
