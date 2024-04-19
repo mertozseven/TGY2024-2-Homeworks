@@ -16,6 +16,9 @@ extension UIColor {
     static let customSystemBackground: UIColor = dynamicColor(light: UIColor(hex: "#F2F2F2", alpha: 1.0)!,
                                                               dark: UIColor(hex: "#2C2C2E", alpha: 1.0)!)
     
+    static let customButtonBackground: UIColor = dynamicColor(light: UIColor(hex: "#DFEFFC", alpha: 1.0)!,
+                                                              dark: UIColor(hex: "#2C2C2E", alpha: 1.0)!)
+    
     static let customTitleColor: UIColor = dynamicColor(light: UIColor(hex: "#383838", alpha: 1.0)!,
                                                         dark: UIColor(hex: "#979797", alpha: 1.0)!)
     

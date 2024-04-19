@@ -62,7 +62,7 @@ class MyStatusCell: UITableViewCell {
         imageView.contentMode = .center
         imageView.layer.cornerRadius = 22
         imageView.clipsToBounds = true
-        imageView.backgroundColor = .customSystemBackground
+        imageView.backgroundColor = .customButtonBackground
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         return imageView
@@ -75,7 +75,7 @@ class MyStatusCell: UITableViewCell {
         imageView.contentMode = .center
         imageView.layer.cornerRadius = 22
         imageView.clipsToBounds = true
-        imageView.backgroundColor = .customSystemBackground
+        imageView.backgroundColor = .customButtonBackground
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         return imageView
