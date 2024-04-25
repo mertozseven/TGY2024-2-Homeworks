@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		963E95422BD92496004F61D1 /* ITLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963E95412BD92496004F61D1 /* ITLabel.swift */; };
+		9681677F2BD9B67300ED792F /* CitySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9681677E2BD9B67300ED792F /* CitySelectionView.swift */; };
+		968167822BD9C45B00ED792F /* ITAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968167812BD9C45B00ED792F /* ITAlertViewController.swift */; };
+		96A9BFA52BD6666A00394CBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9BFA42BD6666A00394CBF /* AppDelegate.swift */; };
+		96A9BFA72BD6666A00394CBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9BFA62BD6666A00394CBF /* SceneDelegate.swift */; };
+		96A9BFA92BD6666A00394CBF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9BFA82BD6666A00394CBF /* SearchViewController.swift */; };
+		96A9BFAE2BD6666C00394CBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96A9BFAD2BD6666C00394CBF /* Assets.xcassets */; };
+		96A9BFB12BD6666C00394CBF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 96A9BFB02BD6666C00394CBF /* Base */; };
+		96A9C0042BD6FDD900394CBF /* MyRoutesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9C0032BD6FDD900394CBF /* MyRoutesViewController.swift */; };
+		96A9C00A2BD6FE8F00394CBF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9C0092BD6FE8F00394CBF /* MainTabBarController.swift */; };
+		96A9C0132BD7066800394CBF /* ITButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9C0122BD7066800394CBF /* ITButton.swift */; };
+		96A9C0152BD7076B00394CBF /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9C0142BD7076B00394CBF /* Ticket.swift */; };
+		96A9C0172BD7094900394CBF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9C0162BD7094900394CBF /* Constants.swift */; };
+		96A9C0192BD70BEE00394CBF /* BuyTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9C0182BD70BEE00394CBF /* BuyTicketViewController.swift */; };
+		96A9C0212BD8334D00394CBF /* ITTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9C0202BD8334D00394CBF /* ITTextField.swift */; };
+		96A9C0232BD83A2100394CBF /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9C0222BD83A2100394CBF /* UIViewExtension.swift */; };
+		96A9C0262BD842B400394CBF /* ITContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9C0252BD842B400394CBF /* ITContainerView.swift */; };
+		96A9C0282BD84F1200394CBF /* SeatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9C0272BD84F1200394CBF /* SeatsViewController.swift */; };
+		96A9C02B2BD8501900394CBF /* DepartureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9C02A2BD8501900394CBF /* DepartureCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		963E95412BD92496004F61D1 /* ITLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITLabel.swift; sourceTree = "<group>"; };
+		9681677E2BD9B67300ED792F /* CitySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySelectionView.swift; sourceTree = "<group>"; };
+		968167812BD9C45B00ED792F /* ITAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITAlertViewController.swift; sourceTree = "<group>"; };
+		96A9BFA12BD6666A00394CBF /* iTicket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTicket.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96A9BFA42BD6666A00394CBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		96A9BFA62BD6666A00394CBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		96A9BFA82BD6666A00394CBF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		96A9BFAD2BD6666C00394CBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96A9BFB02BD6666C00394CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		96A9BFB22BD6666C00394CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96A9C0032BD6FDD900394CBF /* MyRoutesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRoutesViewController.swift; sourceTree = "<group>"; };
+		96A9C0092BD6FE8F00394CBF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		96A9C0122BD7066800394CBF /* ITButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITButton.swift; sourceTree = "<group>"; };
+		96A9C0142BD7076B00394CBF /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		96A9C0162BD7094900394CBF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		96A9C0182BD70BEE00394CBF /* BuyTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyTicketViewController.swift; sourceTree = "<group>"; };
+		96A9C0202BD8334D00394CBF /* ITTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITTextField.swift; sourceTree = "<group>"; };
+		96A9C0222BD83A2100394CBF /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		96A9C0252BD842B400394CBF /* ITContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITContainerView.swift; sourceTree = "<group>"; };
+		96A9C0272BD84F1200394CBF /* SeatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsViewController.swift; sourceTree = "<group>"; };
+		96A9C02A2BD8501900394CBF /* DepartureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96A9BF9E2BD6666A00394CBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		968167832BD9C7AC00ED792F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				968167812BD9C45B00ED792F /* ITAlertViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		96A9BF982BD6666A00394CBF = {
+			isa = PBXGroup;
+			children = (
+				96A9BFA32BD6666A00394CBF /* iTicket */,
+				96A9BFA22BD6666A00394CBF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		96A9BFA22BD6666A00394CBF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96A9BFA12BD6666A00394CBF /* iTicket.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96A9BFA32BD6666A00394CBF /* iTicket */ = {
+			isa = PBXGroup;
+			children = (
+				96A9BFFF2BD6F64E00394CBF /* Model */,
+				96A9BFFE2BD6F64800394CBF /* Custom Views */,
+				96A9BFFD2BD6F63E00394CBF /* Controllers */,
+				96A9C0002BD6F65900394CBF /* Extensions */,
+				96A9C0022BD6FD4E00394CBF /* Constants */,
+				96A9C0012BD6F65E00394CBF /* Support */,
+				96A9BFB22BD6666C00394CBF /* Info.plist */,
+			);
+			path = iTicket;
+			sourceTree = "<group>";
+		};
+		96A9BFFD2BD6F63E00394CBF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				96A9C0052BD6FDDC00394CBF /* Core */,
+				96A9C0062BD6FE0000394CBF /* General */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		96A9BFFE2BD6F64800394CBF /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				968167832BD9C7AC00ED792F /* ViewControllers */,
+				96A9C0292BD84F5E00394CBF /* Cells */,
+				96A9C0242BD8429C00394CBF /* Views */,
+				96A9C01F2BD8333A00394CBF /* TextFields */,
+				96A9C01A2BD70D1900394CBF /* Labels */,
+				96A9C0102BD705FA00394CBF /* Buttons */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		96A9BFFF2BD6F64E00394CBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96A9C0142BD7076B00394CBF /* Ticket.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96A9C0002BD6F65900394CBF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				96A9C0222BD83A2100394CBF /* UIViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		96A9C0012BD6F65E00394CBF /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				96A9BFA42BD6666A00394CBF /* AppDelegate.swift */,
+				96A9BFA62BD6666A00394CBF /* SceneDelegate.swift */,
+				96A9BFAD2BD6666C00394CBF /* Assets.xcassets */,
+				96A9BFAF2BD6666C00394CBF /* LaunchScreen.storyboard */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		96A9C0022BD6FD4E00394CBF /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				96A9C0162BD7094900394CBF /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		96A9C0052BD6FDDC00394CBF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				96A9C0092BD6FE8F00394CBF /* MainTabBarController.swift */,
+				96A9BFA82BD6666A00394CBF /* SearchViewController.swift */,
+				96A9C0032BD6FDD900394CBF /* MyRoutesViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		96A9C0062BD6FE0000394CBF /* General */ = {
+			isa = PBXGroup;
+			children = (
+				96A9C0182BD70BEE00394CBF /* BuyTicketViewController.swift */,
+				96A9C0272BD84F1200394CBF /* SeatsViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		96A9C0102BD705FA00394CBF /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				96A9C0122BD7066800394CBF /* ITButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		96A9C01A2BD70D1900394CBF /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				963E95412BD92496004F61D1 /* ITLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		96A9C01F2BD8333A00394CBF /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				96A9C0202BD8334D00394CBF /* ITTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		96A9C0242BD8429C00394CBF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96A9C0252BD842B400394CBF /* ITContainerView.swift */,
+				9681677E2BD9B67300ED792F /* CitySelectionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		96A9C0292BD84F5E00394CBF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				96A9C02A2BD8501900394CBF /* DepartureCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96A9BFA02BD6666A00394CBF /* iTicket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96A9BFB52BD6666C00394CBF /* Build configuration list for PBXNativeTarget "iTicket" */;
+			buildPhases = (
+				96A9BF9D2BD6666A00394CBF /* Sources */,
+				96A9BF9E2BD6666A00394CBF /* Frameworks */,
+				96A9BF9F2BD6666A00394CBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iTicket;
+			productName = iTicket;
+			productReference = 96A9BFA12BD6666A00394CBF /* iTicket.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96A9BF992BD6666A00394CBF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					96A9BFA02BD6666A00394CBF = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = 96A9BF9C2BD6666A00394CBF /* Build configuration list for PBXProject "iTicket" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 96A9BF982BD6666A00394CBF;
+			productRefGroup = 96A9BFA22BD6666A00394CBF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96A9BFA02BD6666A00394CBF /* iTicket */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96A9BF9F2BD6666A00394CBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96A9BFAE2BD6666C00394CBF /* Assets.xcassets in Resources */,
+				96A9BFB12BD6666C00394CBF /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96A9BF9D2BD6666A00394CBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96A9C0042BD6FDD900394CBF /* MyRoutesViewController.swift in Sources */,
+				96A9C0152BD7076B00394CBF /* Ticket.swift in Sources */,
+				96A9C0192BD70BEE00394CBF /* BuyTicketViewController.swift in Sources */,
+				963E95422BD92496004F61D1 /* ITLabel.swift in Sources */,
+				96A9BFA92BD6666A00394CBF /* SearchViewController.swift in Sources */,
+				96A9C00A2BD6FE8F00394CBF /* MainTabBarController.swift in Sources */,
+				96A9C0132BD7066800394CBF /* ITButton.swift in Sources */,
+				96A9BFA52BD6666A00394CBF /* AppDelegate.swift in Sources */,
+				96A9C0282BD84F1200394CBF /* SeatsViewController.swift in Sources */,
+				96A9C02B2BD8501900394CBF /* DepartureCell.swift in Sources */,
+				968167822BD9C45B00ED792F /* ITAlertViewController.swift in Sources */,
+				96A9C0232BD83A2100394CBF /* UIViewExtension.swift in Sources */,
+				96A9BFA72BD6666A00394CBF /* SceneDelegate.swift in Sources */,
+				9681677F2BD9B67300ED792F /* CitySelectionView.swift in Sources */,
+				96A9C0262BD842B400394CBF /* ITContainerView.swift in Sources */,
+				96A9C0212BD8334D00394CBF /* ITTextField.swift in Sources */,
+				96A9C0172BD7094900394CBF /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		96A9BFAF2BD6666C00394CBF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96A9BFB02BD6666C00394CBF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		96A9BFB32BD6666C00394CBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		96A9BFB42BD6666C00394CBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		96A9BFB62BD6666C00394CBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 28MJ2TX529;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iTicket/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mertozseven.iTicket;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		96A9BFB72BD6666C00394CBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 28MJ2TX529;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iTicket/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mertozseven.iTicket;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96A9BF9C2BD6666A00394CBF /* Build configuration list for PBXProject "iTicket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96A9BFB32BD6666C00394CBF /* Debug */,
+				96A9BFB42BD6666C00394CBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96A9BFB52BD6666C00394CBF /* Build configuration list for PBXNativeTarget "iTicket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96A9BFB62BD6666C00394CBF /* Debug */,
+				96A9BFB72BD6666C00394CBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96A9BF992BD6666A00394CBF /* Project object */;
+}
