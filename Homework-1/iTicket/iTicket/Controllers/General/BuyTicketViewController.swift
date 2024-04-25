@@ -10,6 +10,7 @@ import UIKit
 class BuyTicketViewController: UIViewController {
     
     private var name: String?
+    
     private var surname: String?
     
     private var busLogo: [UIImage] = [
@@ -41,21 +42,12 @@ class BuyTicketViewController: UIViewController {
         addViews()
         configureViews()
         configureUI()
-        let searchVC = SearchViewController()
-        searchVC.onSearchCompletion = { [weak self] name, surname, from, to, date in
-            self?.name = name
-            self?.surname = surname
-            self?.fromCity = from
-            self?.toCity = to
-            self?.departureDate = date
-            print("Closure calisio")
-        }
     }
     
     private func configureUI() {
         view.backgroundColor = .systemBackground
-//        let senderVC = SearchViewController()
-//        senderVC.delegate = self
+        let senderVC = SearchViewController()
+        senderVC.delegate = self
     }
     
     private func addViews() {
@@ -72,6 +64,8 @@ class BuyTicketViewController: UIViewController {
         
         NSLayoutConstraint.activate(tableViewConstraints)
     }
+    
+   
     
 }
 
@@ -98,6 +92,19 @@ extension BuyTicketViewController: UITableViewDataSource {
                        fromCity: fromCity ?? "Lorem Ipsum",
                        toCity: toCity ?? "Lorem Ipsum")
         return cell
+    }
+    
+}
+
+extension BuyTicketViewController: SearchViewDelegate {
+    
+    func sendMessage(name: String, surname: String, from: String, to: String, date: String) {
+        self.name = name
+        self.surname = surname
+        self.departureDate = date
+        self.fromCity = from
+        self.toCity = to
+        print("aaaaaa\(name), \(surname), \(String(describing: fromCity)), \(String(describing: toCity)), \(date)")
     }
     
 }

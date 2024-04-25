@@ -7,10 +7,14 @@
 
 import UIKit
 
+protocol SearchViewDelegate: AnyObject {
+    func sendMessage(name: String, surname: String, from: String, to: String, date: String)
+}
+
 class SearchViewController: UIViewController {
     
     // MARK: - Properties
-    var onSearchCompletion: ((String, String, String, String, String) -> Void)?
+    weak var delegate: SearchViewDelegate?
     
     // MARK: - UI Components
     private var topGradientLayer: CAGradientLayer = {
@@ -80,12 +84,13 @@ class SearchViewController: UIViewController {
         return datePicker
     }()
     
-    private var searchButton: ITButton = {
+    private lazy var searchButton: ITButton = {
         let button = ITButton(
             backgroundColor: .accent,
             title: "Otobüs Ara",
             font: .preferredFont(forTextStyle: .title1)
         )
+        button.addTarget(self, action: #selector(searchButtonAction), for: .touchUpInside)
         
         return button
     }()
@@ -96,7 +101,6 @@ class SearchViewController: UIViewController {
         addViews()
         configureViews()
         configureUI()
-        tappedSearchButton()
     }
     
     // MARK: - Private Methods
@@ -213,10 +217,6 @@ class SearchViewController: UIViewController {
         return newImage
     }
     
-    private func tappedSearchButton() {
-        searchButton.addTarget(self, action: #selector(searchButtonAction), for: .touchUpInside)
-    }
-    
     // MARK: - Objective Methods
     @objc private func searchButtonAction() {
         guard let name = nameTextField.text, !name.isEmpty else { return }
@@ -229,7 +229,7 @@ class SearchViewController: UIViewController {
         dateFormatter.dateFormat = "dd.MM.yyyy"
         let date = dateFormatter.string(from: departureDateSelectionPicker.date)
         print("\(name),\(surname),\(fromCity),\(toCity),\(date)")
-        onSearchCompletion?(name, surname, fromCity, toCity, date)
+        self.delegate?.sendMessage(name: name, surname: surname, from: fromCity, to: toCity, date: date)
         navigationController?.pushViewController(BuyTicketViewController(), animated: true)
     }
     
