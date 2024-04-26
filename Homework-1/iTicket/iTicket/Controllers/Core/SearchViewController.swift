@@ -7,14 +7,10 @@
 
 import UIKit
 
-protocol SearchViewDelegate: AnyObject {
-    func sendMessage(name: String, surname: String, from: String, to: String, date: String)
-}
-
 class SearchViewController: UIViewController {
     
     // MARK: - Properties
-    weak var delegate: SearchViewDelegate?
+    var viewModel = iTicketViewModel()
     
     // MARK: - UI Components
     private var topGradientLayer: CAGradientLayer = {
@@ -186,7 +182,8 @@ class SearchViewController: UIViewController {
             searchButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             searchButton.heightAnchor.constraint(equalToConstant: 40),
             searchButton.widthAnchor.constraint(equalToConstant: 160),
-            searchButton.topAnchor.constraint(equalTo: departureDateContainerView.bottomAnchor, constant: Constants.padding)
+            searchButton.topAnchor.constraint(equalTo: departureDateContainerView.bottomAnchor, constant: 32),
+            searchButton.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -32)
         ]
         NSLayoutConstraint.activate(scrollViewConstraints)
         NSLayoutConstraint.activate(contentViewConstraints)
@@ -229,8 +226,10 @@ class SearchViewController: UIViewController {
         dateFormatter.dateFormat = "dd.MM.yyyy"
         let date = dateFormatter.string(from: departureDateSelectionPicker.date)
         print("\(name),\(surname),\(fromCity),\(toCity),\(date)")
-        self.delegate?.sendMessage(name: name, surname: surname, from: fromCity, to: toCity, date: date)
-        navigationController?.pushViewController(BuyTicketViewController(), animated: true)
+        let ticket = Ticket(passenger: Passenger(name: name, surname: surname, id: 1), date: date, hour: nil, seat: nil, seatNumber: nil, from: fromCity, to: toCity)
+        viewModel.currentTicket = ticket
+        let buyTicketVC = BuyTicketViewController(viewModel: viewModel)
+        navigationController?.pushViewController(buyTicketVC, animated: true)
     }
     
 }

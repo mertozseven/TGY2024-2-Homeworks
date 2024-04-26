@@ -9,21 +9,13 @@ import UIKit
 
 class BuyTicketViewController: UIViewController {
     
-    private var name: String?
+    private var viewModel: iTicketViewModel
     
-    private var surname: String?
-    
-    private var busLogo: [UIImage] = [
+    private let busLogo: [UIImage] = [
         UIImage(named: "efeTur")!,
         UIImage(named: "kamilKoc")!,
         UIImage(named: "metroTurizm")!
     ]
-    
-    private var departureDate: String?
-    
-    private var fromCity: String?
-    
-    private var toCity: String?
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -44,10 +36,18 @@ class BuyTicketViewController: UIViewController {
         configureUI()
     }
     
+    
+    init(viewModel: iTicketViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func configureUI() {
         view.backgroundColor = .systemBackground
-        let senderVC = SearchViewController()
-        senderVC.delegate = self
     }
     
     private func addViews() {
@@ -61,12 +61,8 @@ class BuyTicketViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.padding),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ]
-        
         NSLayoutConstraint.activate(tableViewConstraints)
     }
-    
-   
-    
 }
 
 extension BuyTicketViewController: UITableViewDelegate {
@@ -87,28 +83,16 @@ extension BuyTicketViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DepartureCell.identifier, for: indexPath) as? DepartureCell else {
             return UITableViewCell()
         }
+        guard let ticket = viewModel.currentTicket else {
+            print("ticket is nil")
+            return cell
+        }
+        
         cell.configure(busLogo: busLogo.randomElement()!,
-                       departureDate: departureDate ?? "Lorem Ipsum",
-                       fromCity: fromCity ?? "Lorem Ipsum",
-                       toCity: toCity ?? "Lorem Ipsum")
+                       departureDate: ticket.date,
+                       fromCity: ticket.from,
+                       toCity: ticket.to)
         return cell
     }
     
-}
-
-extension BuyTicketViewController: SearchViewDelegate {
-    
-    func sendMessage(name: String, surname: String, from: String, to: String, date: String) {
-        self.name = name
-        self.surname = surname
-        self.departureDate = date
-        self.fromCity = from
-        self.toCity = to
-        print("aaaaaa\(name), \(surname), \(String(describing: fromCity)), \(String(describing: toCity)), \(date)")
-    }
-    
-}
-
-#Preview {
-    BuyTicketViewController()
 }

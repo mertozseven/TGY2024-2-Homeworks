@@ -102,15 +102,15 @@ class DepartureCell: UITableViewCell {
     private func configureViews() {
         let containerViewConstraints = [
             containerView.topAnchor.constraint(equalTo: topAnchor),
-            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.padding),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
             containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
             containerView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ]
         let busLogoConstraints = [
-            busLogo.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Constants.padding),
-            busLogo.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: Constants.padding),
+            busLogo.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8),
+            busLogo.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8),
             busLogo.heightAnchor.constraint(equalToConstant: 64),
-            busLogo.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.33)
+            busLogo.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.25)
         ]
         let departureDateConstraints = [
             departureDate.centerYAnchor.constraint(equalTo: busLogo.centerYAnchor),
@@ -120,26 +120,26 @@ class DepartureCell: UITableViewCell {
         ]
         let departurePriceConstraints = [
             departurePrice.centerYAnchor.constraint(equalTo: busLogo.centerYAnchor),
-            departurePrice.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -Constants.padding),
+            departurePrice.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8),
             departurePrice.heightAnchor.constraint(equalToConstant: 27),
-            departurePrice.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.33)
+            departurePrice.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.25)
         ]
         let fromLabelConstraints = [
-            fromLabel.topAnchor.constraint(equalTo: busLogo.bottomAnchor, constant: Constants.padding),
+            fromLabel.topAnchor.constraint(equalTo: busLogo.bottomAnchor, constant: 8),
             fromLabel.trailingAnchor.constraint(equalTo: toIcon.leadingAnchor, constant: -2),
-            fromLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -Constants.padding),
+            fromLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8),
             fromLabel.widthAnchor.constraint(equalToConstant: 128)
         ]
         let toIconConstraints = [
-            toIcon.topAnchor.constraint(equalTo: busLogo.bottomAnchor, constant: Constants.padding),
+            toIcon.topAnchor.constraint(equalTo: busLogo.bottomAnchor, constant: 8),
             toIcon.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-            toIcon.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -Constants.padding),
+            toIcon.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8),
             toIcon.widthAnchor.constraint(equalToConstant: 16)
         ]
         let toLabelConstraints = [
-            toLabel.topAnchor.constraint(equalTo: busLogo.bottomAnchor, constant: Constants.padding),
+            toLabel.topAnchor.constraint(equalTo: busLogo.bottomAnchor, constant: 8),
             toLabel.leadingAnchor.constraint(equalTo: toIcon.trailingAnchor, constant: 2),
-            toLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -Constants.padding),
+            toLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8),
             toLabel.widthAnchor.constraint(equalToConstant: 128)
         ]
         

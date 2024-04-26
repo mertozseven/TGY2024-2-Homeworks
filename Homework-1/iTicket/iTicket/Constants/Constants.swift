@@ -9,7 +9,7 @@ import UIKit
 
 struct Constants {
     
-    static let padding: CGFloat = 10
+    static let padding: CGFloat = 16
     
     static let componentHeight: CGFloat = 40
     

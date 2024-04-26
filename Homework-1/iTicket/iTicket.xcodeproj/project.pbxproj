@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9621D9E12BDB25CA0006E8CC /* SeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621D9E02BDB25CA0006E8CC /* SeatView.swift */; };
+		963E31282BDB16160005E339 /* iTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963E31272BDB16160005E339 /* iTicketViewModel.swift */; };
 		963E95422BD92496004F61D1 /* ITLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963E95412BD92496004F61D1 /* ITLabel.swift */; };
 		9681677F2BD9B67300ED792F /* CitySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9681677E2BD9B67300ED792F /* CitySelectionView.swift */; };
 		968167822BD9C45B00ED792F /* ITAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968167812BD9C45B00ED792F /* ITAlertViewController.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9621D9E02BDB25CA0006E8CC /* SeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatView.swift; sourceTree = "<group>"; };
+		963E31272BDB16160005E339 /* iTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTicketViewModel.swift; sourceTree = "<group>"; };
 		963E95412BD92496004F61D1 /* ITLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITLabel.swift; sourceTree = "<group>"; };
 		9681677E2BD9B67300ED792F /* CitySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySelectionView.swift; sourceTree = "<group>"; };
 		968167812BD9C45B00ED792F /* ITAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITAlertViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		963E31262BDB15D20005E339 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				963E31272BDB16160005E339 /* iTicketViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		968167832BD9C7AC00ED792F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +100,7 @@
 		96A9BFA32BD6666A00394CBF /* iTicket */ = {
 			isa = PBXGroup;
 			children = (
+				963E31262BDB15D20005E339 /* ViewModel */,
 				96A9BFFF2BD6F64E00394CBF /* Model */,
 				96A9BFFE2BD6F64800394CBF /* Custom Views */,
 				96A9BFFD2BD6F63E00394CBF /* Controllers */,
@@ -203,6 +216,7 @@
 			children = (
 				96A9C0252BD842B400394CBF /* ITContainerView.swift */,
 				9681677E2BD9B67300ED792F /* CitySelectionView.swift */,
+				9621D9E02BDB25CA0006E8CC /* SeatView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -288,6 +302,8 @@
 				96A9C0042BD6FDD900394CBF /* MyRoutesViewController.swift in Sources */,
 				96A9C0152BD7076B00394CBF /* Ticket.swift in Sources */,
 				96A9C0192BD70BEE00394CBF /* BuyTicketViewController.swift in Sources */,
+				9621D9E12BDB25CA0006E8CC /* SeatView.swift in Sources */,
+				963E31282BDB16160005E339 /* iTicketViewModel.swift in Sources */,
 				963E95422BD92496004F61D1 /* ITLabel.swift in Sources */,
 				96A9BFA92BD6666A00394CBF /* SearchViewController.swift in Sources */,
 				96A9C00A2BD6FE8F00394CBF /* MainTabBarController.swift in Sources */,
