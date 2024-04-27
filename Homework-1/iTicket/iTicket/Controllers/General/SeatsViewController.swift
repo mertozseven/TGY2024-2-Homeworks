@@ -10,8 +10,11 @@ import UIKit
 class SeatsViewController: UIViewController {
     
     // MARK: - Properties
+    private var viewModel: iTicketViewModel
+    
     private var busSeatNumDict = [Int: String]()
-    private var selectedSeats: Int?
+    
+    private var selectedSeats = [String]()
     
     // MARK: - UI Components
     private let seatStatusView = SeatStatusView()
@@ -24,6 +27,7 @@ class SeatsViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(SeatCollectionViewCell.self, forCellWithReuseIdentifier: SeatCollectionViewCell.identifier)
         collectionView.alwaysBounceVertical = true
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 88, right: 0)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.showsVerticalScrollIndicator = false
@@ -32,39 +36,73 @@ class SeatsViewController: UIViewController {
         return collectionView
     }()
     
+    private lazy var buyButton: ITButton = {
+        let button = ITButton(
+            backgroundColor: .systemPink,
+            title: "Satın Al",
+            font: .systemFont(ofSize: 24, weight: .semibold)
+        )
+        button.layer.cornerRadius = 24
+        button.addTarget(self, action: #selector(buyButtonTapped), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         addViews()
         configureLayout()
         configureUI()
         generateSeatNumbers()
+        configureButton()
     }
     
+    // MARK: - inits
+    init(viewModel: iTicketViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Private Methods
     private func addViews() {
         view.addSubview(seatStatusView)
         view.addSubview(collectionView)
+        view.addSubview(buyButton)
     }
     
     private func configureLayout() {
         let seatStatusViewConstraints = [
-            seatStatusView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            seatStatusView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             seatStatusView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             seatStatusView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             seatStatusView.heightAnchor.constraint(equalToConstant: 56)
         ]
         let collectionViewConstraints = [
             collectionView.topAnchor.constraint(equalTo: seatStatusView.bottomAnchor, constant: 16),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ]
+        let buyButtonConstraints = [
+            buyButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            buyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            buyButton.heightAnchor.constraint(equalToConstant: 48),
+            buyButton.widthAnchor.constraint(equalToConstant: 128)
         ]
         
         NSLayoutConstraint.activate(seatStatusViewConstraints)
         NSLayoutConstraint.activate(collectionViewConstraints)
+        NSLayoutConstraint.activate(buyButtonConstraints)
     }
     
     private func configureUI() {
         view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     private func generateSeatNumbers() {
@@ -79,6 +117,21 @@ class SeatsViewController: UIViewController {
                 seatNumber += 1
             }
         }
+    }
+    
+    private func configureButton() {
+        if selectedSeats.isEmpty {
+            self.buyButton.isEnabled = false
+            self.buyButton.isHidden = true
+        } else {
+            self.buyButton.isEnabled = true
+            self.buyButton.isHidden = false
+        }
+    }
+    
+    // MARK: - Objective Methods
+    @objc private func buyButtonTapped() {
+        navigationController?.popToRootViewController(animated: true)
     }
 }
 
@@ -112,12 +165,12 @@ extension SeatsViewController: UICollectionViewDataSource {
 extension SeatsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (UIScreen.main.bounds.width - 32) / 5
+        let width = (UIScreen.main.bounds.width - 16) / 5
         return CGSize(width: width, height: width)
     }
     
 }
 
 #Preview {
-    SeatsViewController()
+    SeatsViewController(viewModel: iTicketViewModel())
 }

@@ -10,7 +10,7 @@ import UIKit
 class SearchViewController: UIViewController {
     
     // MARK: - Properties
-    var viewModel = iTicketViewModel()
+    var viewModel: iTicketViewModel
     
     // MARK: - UI Components
     private var topGradientLayer: CAGradientLayer = {
@@ -98,6 +98,16 @@ class SearchViewController: UIViewController {
         configureViews()
         configureUI()
         createDismissKeyboardTapGesture()
+    }
+    
+    // MARK: - inits
+    init(viewModel: iTicketViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Private Methods
@@ -204,6 +214,7 @@ class SearchViewController: UIViewController {
         view.backgroundColor = .systemBackground
         title = "Ara"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
     private func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage? {

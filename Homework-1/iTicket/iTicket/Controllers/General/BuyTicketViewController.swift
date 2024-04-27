@@ -36,7 +36,6 @@ class BuyTicketViewController: UIViewController {
         configureUI()
     }
     
-    
     init(viewModel: iTicketViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -63,6 +62,7 @@ class BuyTicketViewController: UIViewController {
         ]
         NSLayoutConstraint.activate(tableViewConstraints)
     }
+
 }
 
 extension BuyTicketViewController: UITableViewDelegate {
@@ -97,8 +97,8 @@ extension BuyTicketViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        present(SeatsViewController(), animated: true)
-        tableView.deselectRow(at: indexPath, animated: true)
+        navigationController?.pushViewController(SeatsViewController(viewModel: viewModel), animated: true)
+        
     }
     
 }

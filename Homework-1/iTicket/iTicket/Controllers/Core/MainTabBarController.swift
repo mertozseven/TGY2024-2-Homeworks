@@ -16,7 +16,7 @@ class MainTabBarController: UITabBarController {
     }
     
     private func configure() {
-        let vc1 = UINavigationController(rootViewController: SearchViewController())
+        let vc1 = UINavigationController(rootViewController: SearchViewController(viewModel: iTicketViewModel()))
         let vc2 = UINavigationController(rootViewController: MyRoutesViewController())
         vc1.tabBarItem.image = UIImage(systemName: "magnifyingglass")
         vc2.tabBarItem.image = UIImage(systemName: "arrow.triangle.swap")

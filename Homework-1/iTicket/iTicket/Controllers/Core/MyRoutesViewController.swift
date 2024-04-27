@@ -9,12 +9,25 @@ import UIKit
 
 class MyRoutesViewController: UIViewController {
     
+    // MARK: - Properties
+    var viewModel: iTicketViewModel
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         addViews()
         configureViews()
         configureUI()
+    }
+    
+    // MARK: - inits
+    init(viewModel: iTicketViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Private Methods

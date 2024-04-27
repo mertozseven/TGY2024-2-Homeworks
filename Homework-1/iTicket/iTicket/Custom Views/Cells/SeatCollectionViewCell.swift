@@ -25,8 +25,8 @@ class SeatCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.text = ""
-        label.font = .systemFont(ofSize: 14)
-        label.textColor = .white
+        label.font = .systemFont(ofSize: 24, weight: .semibold)
+        label.textColor = .black
         label.clipsToBounds = true
         label.translatesAutoresizingMaskIntoConstraints = false
         
