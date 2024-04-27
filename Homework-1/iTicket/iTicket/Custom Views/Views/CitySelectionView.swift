@@ -43,7 +43,6 @@ class CitySelectionView: UIView {
         addViews()
         configureViews()
         configureUI()
-        
     }
     
     private func addViews() {

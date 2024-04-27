@@ -40,6 +40,7 @@ class ITLabel: UILabel {
     
     private func configure() {
         clipsToBounds = true
+        numberOfLines = 0
         translatesAutoresizingMaskIntoConstraints = false
     }
     

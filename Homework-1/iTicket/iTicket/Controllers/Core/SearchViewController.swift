@@ -97,6 +97,7 @@ class SearchViewController: UIViewController {
         addViews()
         configureViews()
         configureUI()
+        createDismissKeyboardTapGesture()
     }
     
     // MARK: - Private Methods
@@ -214,6 +215,11 @@ class SearchViewController: UIViewController {
         return newImage
     }
     
+    private func createDismissKeyboardTapGesture() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+    }
+    
     // MARK: - Objective Methods
     @objc private func searchButtonAction() {
         guard let name = nameTextField.text, !name.isEmpty else { return }
@@ -234,4 +240,6 @@ class SearchViewController: UIViewController {
     
 }
 
-
+#Preview {
+    MainTabBarController()
+}

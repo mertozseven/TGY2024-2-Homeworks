@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9621D9E12BDB25CA0006E8CC /* SeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621D9E02BDB25CA0006E8CC /* SeatView.swift */; };
+		96017EDF2BDD04A900DDF31D /* SeatStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96017EDE2BDD04A900DDF31D /* SeatStatusView.swift */; };
+		96017EE22BDD141900DDF31D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96017EE12BDD141900DDF31D /* UIColorExtension.swift */; };
+		961F49F02BDBE8230027F5F5 /* SeatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961F49EF2BDBE8230027F5F5 /* SeatCollectionViewCell.swift */; };
 		963E31282BDB16160005E339 /* iTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963E31272BDB16160005E339 /* iTicketViewModel.swift */; };
 		963E95422BD92496004F61D1 /* ITLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963E95412BD92496004F61D1 /* ITLabel.swift */; };
 		9681677F2BD9B67300ED792F /* CitySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9681677E2BD9B67300ED792F /* CitySelectionView.swift */; };
@@ -30,7 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9621D9E02BDB25CA0006E8CC /* SeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatView.swift; sourceTree = "<group>"; };
+		96017EDE2BDD04A900DDF31D /* SeatStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatStatusView.swift; sourceTree = "<group>"; };
+		96017EE12BDD141900DDF31D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		961F49EF2BDBE8230027F5F5 /* SeatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatCollectionViewCell.swift; sourceTree = "<group>"; };
 		963E31272BDB16160005E339 /* iTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTicketViewModel.swift; sourceTree = "<group>"; };
 		963E95412BD92496004F61D1 /* ITLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITLabel.swift; sourceTree = "<group>"; };
 		9681677E2BD9B67300ED792F /* CitySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySelectionView.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 		96A9C0002BD6F65900394CBF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				96017EE12BDD141900DDF31D /* UIColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -216,7 +221,7 @@
 			children = (
 				96A9C0252BD842B400394CBF /* ITContainerView.swift */,
 				9681677E2BD9B67300ED792F /* CitySelectionView.swift */,
-				9621D9E02BDB25CA0006E8CC /* SeatView.swift */,
+				96017EDE2BDD04A900DDF31D /* SeatStatusView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				96A9C02A2BD8501900394CBF /* DepartureCell.swift */,
+				961F49EF2BDBE8230027F5F5 /* SeatCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -302,18 +308,20 @@
 				96A9C0042BD6FDD900394CBF /* MyRoutesViewController.swift in Sources */,
 				96A9C0152BD7076B00394CBF /* Ticket.swift in Sources */,
 				96A9C0192BD70BEE00394CBF /* BuyTicketViewController.swift in Sources */,
-				9621D9E12BDB25CA0006E8CC /* SeatView.swift in Sources */,
 				963E31282BDB16160005E339 /* iTicketViewModel.swift in Sources */,
 				963E95422BD92496004F61D1 /* ITLabel.swift in Sources */,
 				96A9BFA92BD6666A00394CBF /* SearchViewController.swift in Sources */,
 				96A9C00A2BD6FE8F00394CBF /* MainTabBarController.swift in Sources */,
+				96017EE22BDD141900DDF31D /* UIColorExtension.swift in Sources */,
 				96A9C0132BD7066800394CBF /* ITButton.swift in Sources */,
+				96017EDF2BDD04A900DDF31D /* SeatStatusView.swift in Sources */,
 				96A9BFA52BD6666A00394CBF /* AppDelegate.swift in Sources */,
 				96A9C0282BD84F1200394CBF /* SeatsViewController.swift in Sources */,
 				96A9C02B2BD8501900394CBF /* DepartureCell.swift in Sources */,
 				968167822BD9C45B00ED792F /* ITAlertViewController.swift in Sources */,
 				96A9BFA72BD6666A00394CBF /* SceneDelegate.swift in Sources */,
 				9681677F2BD9B67300ED792F /* CitySelectionView.swift in Sources */,
+				961F49F02BDBE8230027F5F5 /* SeatCollectionViewCell.swift in Sources */,
 				96A9C0262BD842B400394CBF /* ITContainerView.swift in Sources */,
 				96A9C0212BD8334D00394CBF /* ITTextField.swift in Sources */,
 				96A9C0172BD7094900394CBF /* Constants.swift in Sources */,

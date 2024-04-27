@@ -21,8 +21,8 @@ class ITContainerView: UIView {
     
     // MARK: - ContainerView configuration
     private func configure() {
-        backgroundColor = .secondarySystemBackground
         layer.cornerRadius = 10
+        backgroundColor = .secondarySystemBackground
         translatesAutoresizingMaskIntoConstraints = false
     }
     

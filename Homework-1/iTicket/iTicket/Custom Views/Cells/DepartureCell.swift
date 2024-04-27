@@ -29,7 +29,7 @@ class DepartureCell: UITableViewCell {
         text: "dd.MM.yyyy",
         textAlignment: .center,
         textColor: .label,
-        font: .preferredFont(forTextStyle: .title2)
+        font: .preferredFont(forTextStyle: .title3)
     )
     
     private var departurePrice = ITLabel(
@@ -165,8 +165,4 @@ class DepartureCell: UITableViewCell {
         return newImage
     }
     
-}
-
-#Preview {
-    DepartureCell()
 }

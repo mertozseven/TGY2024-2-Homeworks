@@ -92,7 +92,13 @@ extension BuyTicketViewController: UITableViewDataSource {
                        departureDate: ticket.date,
                        fromCity: ticket.from,
                        toCity: ticket.to)
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        present(SeatsViewController(), animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
