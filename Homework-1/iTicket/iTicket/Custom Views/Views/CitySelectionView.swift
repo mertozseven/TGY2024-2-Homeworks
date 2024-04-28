@@ -9,6 +9,7 @@ import UIKit
 
 class CitySelectionView: UIView {
     
+    // MARK: - UI Components
     private var cityTitleLabel = ITLabel(
         text: "Nereden",
         textAlignment: .left,
@@ -18,7 +19,6 @@ class CitySelectionView: UIView {
     
     lazy var citySelectionPicker: UIPickerView = {
         let pickerView = UIPickerView()
-        pickerView.delegate = self
         pickerView.dataSource = self
         pickerView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -45,6 +45,7 @@ class CitySelectionView: UIView {
         configureUI()
     }
     
+    // MARK: - Private Methods
     private func addViews() {
         addSubview(cityTitleLabel)
         addSubview(citySelectionPicker)
@@ -76,10 +77,7 @@ class CitySelectionView: UIView {
     
 }
 
-extension CitySelectionView: UIPickerViewDelegate {
-    
-}
-
+// MARK: - UIPickerViewDataSource Methods
 extension CitySelectionView: UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

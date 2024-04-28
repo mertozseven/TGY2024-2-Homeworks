@@ -9,6 +9,7 @@ import UIKit
 
 class BuyTicketViewController: UIViewController {
     
+    // MARK: - Properties
     private var viewModel: iTicketViewModel
     
     private let busLogo: [UIImage] = [
@@ -17,12 +18,14 @@ class BuyTicketViewController: UIViewController {
         UIImage(named: "metroTurizm")!
     ]
     
+    // MARK: - UI Components
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(DepartureCell.self, forCellReuseIdentifier: DepartureCell.identifier)
         tableView.separatorEffect = .none
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         return tableView
@@ -45,8 +48,10 @@ class BuyTicketViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Private Methods
     private func configureUI() {
         view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     private func addViews() {
@@ -65,14 +70,20 @@ class BuyTicketViewController: UIViewController {
 
 }
 
+// MARK: - UITableViewDelegate Methods
 extension BuyTicketViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         128
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(SeatsViewController(viewModel: viewModel), animated: true)
+    }
+    
 }
 
+// MARK: - UITableViewDataSource Methods
 extension BuyTicketViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,18 +98,12 @@ extension BuyTicketViewController: UITableViewDataSource {
             print("ticket is nil")
             return cell
         }
-        
         cell.configure(busLogo: busLogo.randomElement()!,
                        departureDate: ticket.date,
                        fromCity: ticket.from,
                        toCity: ticket.to)
-        
+        cell.selectionStyle = .none
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(SeatsViewController(viewModel: viewModel), animated: true)
-        
     }
     
 }

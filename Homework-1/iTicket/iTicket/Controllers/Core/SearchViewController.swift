@@ -74,7 +74,8 @@ class SearchViewController: UIViewController {
         let datePicker = UIDatePicker()
         datePicker.preferredDatePickerStyle = .compact
         datePicker.calendar = .current
-        datePicker.datePickerMode = .date
+        datePicker.minimumDate = .now
+        datePicker.datePickerMode = .dateAndTime
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         
         return datePicker
@@ -127,7 +128,7 @@ class SearchViewController: UIViewController {
     }
     
     private func configureViews() {
-
+        
         let scrollViewConstraints = [
             scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             scrollView.widthAnchor.constraint(equalTo: view.widthAnchor),
@@ -167,8 +168,8 @@ class SearchViewController: UIViewController {
         ]
         let toCityViewConstraints = [
             toCityView.topAnchor.constraint(equalTo: fromCityView.bottomAnchor, constant: Constants.padding),
-            toCityView.leadingAnchor.constraint(equalTo: fromCityView.leadingAnchor),
-            toCityView.trailingAnchor.constraint(equalTo: fromCityView.trailingAnchor),
+            toCityView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.padding),
+            toCityView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.padding),
             toCityView.heightAnchor.constraint(equalToConstant: 2 * Constants.containerHeight)
         ]
         let departureDateContainerViewConstraints = [
@@ -187,7 +188,7 @@ class SearchViewController: UIViewController {
             departureDateSelectionPicker.topAnchor.constraint(equalTo: departureDateTitleLabel.bottomAnchor, constant: Constants.padding),
             departureDateSelectionPicker.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             departureDateSelectionPicker.heightAnchor.constraint(equalToConstant: Constants.componentHeight),
-            departureDateSelectionPicker.widthAnchor.constraint(equalToConstant: 120)
+            departureDateSelectionPicker.widthAnchor.constraint(equalToConstant: 200)
         ]
         let searchButtonConstraints = [
             searchButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -242,15 +243,24 @@ class SearchViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
         let date = dateFormatter.string(from: departureDateSelectionPicker.date)
-        print("\(name),\(surname),\(fromCity),\(toCity),\(date)")
-        let ticket = Ticket(passenger: Passenger(name: name, surname: surname, id: 1), date: date, hour: nil, seat: nil, seatNumber: nil, from: fromCity, to: toCity)
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.hour, .minute], from: departureDateSelectionPicker.date)
+        let hour = components.hour ?? 0
+        let minute = components.minute ?? 0
+        let departureHour = Hour(hour: hour, minute: minute)
+        let passengerID = UUID().uuidString
+        let ticket = Ticket(
+            passenger: Passenger(name: name, surname: surname, id: passengerID),
+            date: date,
+            hour: departureHour,
+            seat: nil,
+            seatNumber: nil,
+            from: fromCity,
+            to: toCity
+        )
         viewModel.currentTicket = ticket
         let buyTicketVC = BuyTicketViewController(viewModel: viewModel)
         navigationController?.pushViewController(buyTicketVC, animated: true)
     }
     
-}
-
-#Preview {
-    MainTabBarController()
 }

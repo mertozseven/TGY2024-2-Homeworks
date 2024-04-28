@@ -27,7 +27,3 @@ struct Constants {
                          "Tekirdağ","Tokat","Trabzon","Tunceli","Uşak","Van","Yalova","Yozgat","Zonguldak"]
     
 }
-
-#Preview {
-    MainTabBarController()
-}

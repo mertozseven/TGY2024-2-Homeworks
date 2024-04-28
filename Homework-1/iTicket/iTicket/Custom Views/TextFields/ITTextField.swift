@@ -9,6 +9,7 @@ import UIKit
 
 class ITTextField: UITextField {
     
+    // MARK: - inits
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -36,6 +37,7 @@ class ITTextField: UITextField {
         configure()
     }
     
+    // MARK: - Private Methods
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
         clipsToBounds = true

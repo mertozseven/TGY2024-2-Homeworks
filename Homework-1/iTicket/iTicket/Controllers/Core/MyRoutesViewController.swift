@@ -12,6 +12,12 @@ class MyRoutesViewController: UIViewController {
     // MARK: - Properties
     var viewModel: iTicketViewModel
     
+    // MARK: - UI Components
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        return tableView
+    }()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -31,7 +31,7 @@ class ITButton: UIButton {
         configure()
     }
     
-    // MARK: - Button Configuration
+    // MARK: - Private Methods
     private func configure() {
         layer.cornerRadius = 10
         setTitleColor(.white, for: .normal)

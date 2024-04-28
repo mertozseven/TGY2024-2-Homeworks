@@ -12,9 +12,9 @@ class SeatsViewController: UIViewController {
     // MARK: - Properties
     private var viewModel: iTicketViewModel
     
-    private var busSeatNumDict = [Int: String]()
-    
     private var selectedSeats = [String]()
+    
+    private var busSeatNumDict = [Int: String]()
     
     // MARK: - UI Components
     private let seatStatusView = SeatStatusView()
@@ -31,6 +31,7 @@ class SeatsViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.isUserInteractionEnabled = true
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         return collectionView
@@ -129,32 +130,112 @@ class SeatsViewController: UIViewController {
         }
     }
     
+    private func printFinalTicketDetails() {
+        print("\nTicket Details:")
+        if let currentTicket = viewModel.currentTicket {
+            print("Name: \(currentTicket.passenger.name)")
+            print("Surname: \(currentTicket.passenger.surname)")
+            print("ID: \(currentTicket.passenger.id)")
+            print("Date: \(currentTicket.date)")
+            if let hour = currentTicket.hour {
+                print("Hour: \(hour.hour)")
+                print("Minute: \(hour.minute)")
+            }
+            print("From: \(currentTicket.from)")
+            print("To: \(currentTicket.to)")
+            print("Seats: \(selectedSeats.joined(separator: ", "))")
+            print("Total Seats: \(selectedSeats.count)")
+        }
+        print("\nAll Tickets:")
+        for ticket in viewModel.tickets {
+            print("\nName: \(ticket?.passenger.name ?? "")")
+            print("Surname: \(ticket?.passenger.surname ?? "")")
+            print("ID: \(ticket?.passenger.id ?? "")")
+            print("Date: \(ticket?.date ?? "")")
+            if let hour = ticket?.hour {
+                print("Hour: \(hour.hour)")
+                print("Minute: \(hour.minute)")
+            }
+            print("From: \(ticket?.from ?? "")")
+            print("To: \(ticket?.to ?? "")")
+            print("Seats: \(ticket?.seat?.joined(separator: ", ") ?? "")")
+            print("Toal Seats: \(ticket?.seat?.count ?? 0)\n")
+        }
+    }
+    
     // MARK: - Objective Methods
     @objc private func buyButtonTapped() {
-        navigationController?.popToRootViewController(animated: true)
+        if let currentTicket = viewModel.currentTicket {
+            viewModel.tickets.append(currentTicket)
+        }
+        printFinalTicketDetails()
+        if let mainTabBarController = self.tabBarController as? MainTabBarController {
+            if let viewControllers = mainTabBarController.viewControllers {
+                for navController in viewControllers {
+                    if let navController = navController as? UINavigationController {
+                        if let searchVC = navController.viewControllers.first(where: { $0 is SearchViewController }) as? SearchViewController {
+                            searchVC.viewModel = viewModel
+                        }
+                        if let myRoutesVC = navController.viewControllers.first(where: { $0 is MyRoutesViewController }) as? MyRoutesViewController {
+                            myRoutesVC.viewModel = viewModel
+                        }
+                    }
+                }
+            }
+        }
+        if let searchVC = navigationController?.viewControllers.first(where: { $0 is SearchViewController }) as? SearchViewController {
+            navigationController?.popToViewController(searchVC, animated: true)
+        }
     }
 }
 
 extension SeatsViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? SeatCollectionViewCell else { return }
+        
+        if busSeatNumDict[indexPath.row] == "" { return }
+        
+        if let seatNumber = busSeatNumDict[indexPath.row], !selectedSeats.contains(seatNumber) {
+            if selectedSeats.count < 5 {
+                cell.containerView.backgroundColor = .systemBlue
+                selectedSeats.append(seatNumber)
+                viewModel.currentTicket?.seat = selectedSeats
+                viewModel.currentTicket?.seatNumber = selectedSeats.count
+                print("Added \(seatNumber) to selectedSeats")
+            } else {
+                let alert = UIAlertController(title: "Maksimum Koltuk Sayısına Ulaşıldı", message: "Lütfen en fazla 5 koltuk seçiniz.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+            }
+        } else if let index = selectedSeats.firstIndex(of: busSeatNumDict[indexPath.row] ?? "") {
+            cell.containerView.backgroundColor = .systemGreen
+            selectedSeats.remove(at: index)
+            viewModel.currentTicket?.seat = selectedSeats
+            viewModel.currentTicket?.seatNumber = selectedSeats.count
+            print("Removed \(busSeatNumDict[indexPath.row] ?? "") from selectedSeats")
+        }
+        configureButton()
+    }
+    
+}
+
+extension SeatsViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SeatCollectionViewCell.identifier, for: indexPath) as? SeatCollectionViewCell else {
             fatalError("Unable to dequeue SeatCollectionViewCell")
         }
-        let text = busSeatNumDict[indexPath.row] ?? ""
-        if text.isEmpty {
+        let seatNumber = busSeatNumDict[indexPath.row] ?? ""
+        if seatNumber.isEmpty {
             cell.alpha = 0
             cell.containerView.backgroundColor = .systemBackground
         } else {
             cell.alpha = 1
-            cell.configure(with: text)
+            cell.configure(with: seatNumber)
         }
-        
         return cell
     }
-}
-
-extension SeatsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 60
@@ -169,8 +250,4 @@ extension SeatsViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: width)
     }
     
-}
-
-#Preview {
-    SeatsViewController(viewModel: iTicketViewModel())
 }

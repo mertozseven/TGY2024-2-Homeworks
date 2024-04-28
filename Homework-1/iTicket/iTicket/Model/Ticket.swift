@@ -11,16 +11,17 @@ struct Ticket {
     var passenger: Passenger
     var date: String
     var hour: Hour?
-    var seat: Int?
+    var seat: [String]?
     var seatNumber: Int?
     var from: String
     var to: String
+
 }
 
 struct Passenger {
     var name: String
     var surname: String
-    var id: Int
+    var id: String
 }
 
 struct Hour {

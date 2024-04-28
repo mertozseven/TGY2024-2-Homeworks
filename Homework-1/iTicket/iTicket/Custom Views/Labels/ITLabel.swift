@@ -9,6 +9,7 @@ import UIKit
 
 class ITLabel: UILabel {
     
+    // MARK: - inits
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -38,6 +39,7 @@ class ITLabel: UILabel {
         configure()
     }
     
+    // MARK: - Private Methods
     private func configure() {
         clipsToBounds = true
         numberOfLines = 0

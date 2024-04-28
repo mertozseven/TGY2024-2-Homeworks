@@ -68,7 +68,6 @@ class DepartureCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addViews()
         configureViews()
-        configureUI()
     }
     
     required init?(coder: NSCoder) {
@@ -152,10 +151,6 @@ class DepartureCell: UITableViewCell {
         NSLayoutConstraint.activate(toLabelConstraints)
     }
     
-    private func configureUI() {
-        
-    }
-    
     private func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage? {
         let renderer = UIGraphicsImageRenderer(size: targetSize)
         let newImage = renderer.image { (context) in
@@ -164,5 +159,4 @@ class DepartureCell: UITableViewCell {
         
         return newImage
     }
-    
 }

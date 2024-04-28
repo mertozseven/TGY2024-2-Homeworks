@@ -9,8 +9,10 @@ import UIKit
 
 class SeatCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Properties
     static let identifier = "SeatCollectionViewCell"
     
+    // MARK: - UI Components
     let containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemGreen
@@ -33,6 +35,7 @@ class SeatCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    // MARK: - inits
     override init(frame: CGRect) {
         super.init(frame: frame)
         addViews()
@@ -43,10 +46,12 @@ class SeatCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Public Methods
     public func configure(with seatNumber: String) {
         seatLabel.text = seatNumber
     }
     
+    // MARK: - Private Methods
     private func addViews() {
         contentView.addSubview(containerView)
         containerView.addSubview(seatLabel)
@@ -80,8 +85,4 @@ class SeatCollectionViewCell: UICollectionViewCell {
         seatLabel.text = nil
         containerView.backgroundColor = .systemGreen
     }
-}
-
-#Preview {
-    SeatCollectionViewCell()
 }

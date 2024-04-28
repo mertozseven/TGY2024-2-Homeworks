@@ -9,9 +9,6 @@ import UIKit
 
 class SeatStatusView: UIView {
     
-    // MARK: - Properties
-
-    
     // MARK: - UI Components
     private let avaliableContainerView: ITContainerView = {
         let view = ITContainerView()
@@ -76,6 +73,7 @@ class SeatStatusView: UIView {
         font: .systemFont(ofSize: 16, weight: .semibold)
     )
     
+    // MARK: - inits
     override init(frame: CGRect) {
         super.init(frame: frame)
         addViews()
@@ -87,6 +85,7 @@ class SeatStatusView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Private Methods
     private func addViews() {
         addSubview(avaliableContainerView)
         avaliableContainerView.addSubview(avaliableColorView)
@@ -170,8 +169,4 @@ class SeatStatusView: UIView {
         backgroundColor = .clear
         translatesAutoresizingMaskIntoConstraints = false
     }
-}
-
-#Preview {
-    SeatStatusView()
 }
