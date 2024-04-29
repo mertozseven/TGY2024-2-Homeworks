@@ -267,7 +267,7 @@ class MyRoutesCell: UITableViewCell {
             seatLabel.topAnchor.constraint(equalTo: seatTitleLabel.bottomAnchor, constant: padding / 2),
             seatLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             seatLabel.heightAnchor.constraint(equalToConstant: 24),
-            seatLabel.widthAnchor.constraint(equalToConstant: 144)
+            seatLabel.widthAnchor.constraint(equalToConstant: 200)
         ]
         let qrCodeImageConstraints = [
             qrCodeImage.topAnchor.constraint(equalTo: seatLabel.bottomAnchor, constant: padding),

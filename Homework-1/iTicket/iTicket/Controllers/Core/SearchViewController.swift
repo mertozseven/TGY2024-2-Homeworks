@@ -216,6 +216,11 @@ class SearchViewController: UIViewController {
         title = "Ara"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        if let savedTicketsData = UserDefaults.standard.data(forKey: "tickets") {
+            if let savedTickets = try? JSONDecoder().decode([Ticket].self, from: savedTicketsData) {
+                viewModel.tickets = savedTickets
+            }
+        }
     }
     
     private func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage? {
