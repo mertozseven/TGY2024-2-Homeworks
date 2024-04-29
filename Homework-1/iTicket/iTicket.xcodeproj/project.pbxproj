@@ -32,7 +32,7 @@
 		96A9C0262BD842B400394CBF /* ITContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9C0252BD842B400394CBF /* ITContainerView.swift */; };
 		96A9C0282BD84F1200394CBF /* SeatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9C0272BD84F1200394CBF /* SeatsViewController.swift */; };
 		96A9C02B2BD8501900394CBF /* DepartureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A9C02A2BD8501900394CBF /* DepartureCell.swift */; };
-		96AC6FB12BDFBF3100159EEF /* readme.MD in Resources */ = {isa = PBXBuildFile; fileRef = 96AC6FB02BDFBF3100159EEF /* readme.MD */; };
+		96AC6FB12BDFBF3100159EEF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 96AC6FB02BDFBF3100159EEF /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +63,7 @@
 		96A9C0252BD842B400394CBF /* ITContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITContainerView.swift; sourceTree = "<group>"; };
 		96A9C0272BD84F1200394CBF /* SeatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsViewController.swift; sourceTree = "<group>"; };
 		96A9C02A2BD8501900394CBF /* DepartureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureCell.swift; sourceTree = "<group>"; };
-		96AC6FB02BDFBF3100159EEF /* readme.MD */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.MD; sourceTree = "<group>"; };
+		96AC6FB02BDFBF3100159EEF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +120,7 @@
 				96A9C0022BD6FD4E00394CBF /* Constants */,
 				96A9C0012BD6F65E00394CBF /* Support */,
 				96A9BFB22BD6666C00394CBF /* Info.plist */,
-				96AC6FB02BDFBF3100159EEF /* readme.MD */,
+				96AC6FB02BDFBF3100159EEF /* README.md */,
 			);
 			path = iTicket;
 			sourceTree = "<group>";
@@ -306,7 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96A9BFAE2BD6666C00394CBF /* Assets.xcassets in Resources */,
-				96AC6FB12BDFBF3100159EEF /* readme.MD in Resources */,
+				96AC6FB12BDFBF3100159EEF /* README.md in Resources */,
 				96A9BFB12BD6666C00394CBF /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
