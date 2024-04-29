@@ -28,7 +28,7 @@ class ITAlertViewController: UIViewController {
         return label
     }()
     
-    private lazy var actionButton = ITButton(backgroundColor: .systemRed, title: "Okay", font: .preferredFont(forTextStyle: .headline))
+    private lazy var actionButton = ITButton(backgroundColor: .systemRed, title: "Tamam", font: .preferredFont(forTextStyle: .headline))
     
     // MARK: - inits
     init(alertTitle: String, message: String, buttonTitle: String) {
@@ -75,7 +75,7 @@ class ITAlertViewController: UIViewController {
             titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: padding),
             titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
             titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
-            titleLabel.heightAnchor.constraint(equalToConstant: 28)
+            titleLabel.heightAnchor.constraint(equalToConstant: 56)
         ]
         let actionButtonConstraints = [
             actionButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -padding),
@@ -99,12 +99,8 @@ class ITAlertViewController: UIViewController {
         actionButton.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
     }
     
-    @objc fileprivate func dismissVC() {
+    @objc private func dismissVC() {
         dismiss(animated: true)
     }
 
-}
-
-#Preview {
-    ITAlertViewController(alertTitle: "deneme", message: "denemesgfsdfsadfasdfasdfasdfdsafssadfasdfsdaasddsfdasdsdfasdfasdfasdfsadfdsaasdfsadfasdfasdf", buttonTitle: "deneme")
 }

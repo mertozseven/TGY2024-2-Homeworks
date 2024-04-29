@@ -19,6 +19,7 @@ class CitySelectionView: UIView {
     
     lazy var citySelectionPicker: UIPickerView = {
         let pickerView = UIPickerView()
+        pickerView.delegate = self
         pickerView.dataSource = self
         pickerView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -74,6 +75,11 @@ class CitySelectionView: UIView {
         layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
     }
+    
+}
+
+// MARK: - UIPickerViewDelegate Methods
+extension CitySelectionView: UIPickerViewDelegate {
     
 }
 

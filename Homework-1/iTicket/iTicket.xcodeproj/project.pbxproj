@@ -11,6 +11,8 @@
 		96017EE22BDD141900DDF31D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96017EE12BDD141900DDF31D /* UIColorExtension.swift */; };
 		961F49F02BDBE8230027F5F5 /* SeatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961F49EF2BDBE8230027F5F5 /* SeatCollectionViewCell.swift */; };
 		962D151D2BDE71BB0077FB6F /* MyRoutesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962D151C2BDE71BB0077FB6F /* MyRoutesCell.swift */; };
+		962D151F2BDE825D0077FB6F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962D151E2BDE825D0077FB6F /* UIViewControllerExtension.swift */; };
+		962D15212BDEAE470077FB6F /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962D15202BDEAE470077FB6F /* EmptyView.swift */; };
 		963E31282BDB16160005E339 /* iTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963E31272BDB16160005E339 /* iTicketViewModel.swift */; };
 		963E95422BD92496004F61D1 /* ITLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963E95412BD92496004F61D1 /* ITLabel.swift */; };
 		9681677F2BD9B67300ED792F /* CitySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9681677E2BD9B67300ED792F /* CitySelectionView.swift */; };
@@ -37,6 +39,8 @@
 		96017EE12BDD141900DDF31D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		961F49EF2BDBE8230027F5F5 /* SeatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatCollectionViewCell.swift; sourceTree = "<group>"; };
 		962D151C2BDE71BB0077FB6F /* MyRoutesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRoutesCell.swift; sourceTree = "<group>"; };
+		962D151E2BDE825D0077FB6F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		962D15202BDEAE470077FB6F /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		963E31272BDB16160005E339 /* iTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTicketViewModel.swift; sourceTree = "<group>"; };
 		963E95412BD92496004F61D1 /* ITLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITLabel.swift; sourceTree = "<group>"; };
 		9681677E2BD9B67300ED792F /* CitySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySelectionView.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				96017EE12BDD141900DDF31D /* UIColorExtension.swift */,
+				962D151E2BDE825D0077FB6F /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 				96A9C0252BD842B400394CBF /* ITContainerView.swift */,
 				9681677E2BD9B67300ED792F /* CitySelectionView.swift */,
 				96017EDE2BDD04A900DDF31D /* SeatStatusView.swift */,
+				962D15202BDEAE470077FB6F /* EmptyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 				96A9C0152BD7076B00394CBF /* Ticket.swift in Sources */,
 				96A9C0192BD70BEE00394CBF /* BuyTicketViewController.swift in Sources */,
 				963E31282BDB16160005E339 /* iTicketViewModel.swift in Sources */,
+				962D15212BDEAE470077FB6F /* EmptyView.swift in Sources */,
 				963E95422BD92496004F61D1 /* ITLabel.swift in Sources */,
 				96A9BFA92BD6666A00394CBF /* SearchViewController.swift in Sources */,
 				96A9C00A2BD6FE8F00394CBF /* MainTabBarController.swift in Sources */,
@@ -328,6 +335,7 @@
 				961F49F02BDBE8230027F5F5 /* SeatCollectionViewCell.swift in Sources */,
 				96A9C0262BD842B400394CBF /* ITContainerView.swift in Sources */,
 				96A9C0212BD8334D00394CBF /* ITTextField.swift in Sources */,
+				962D151F2BDE825D0077FB6F /* UIViewControllerExtension.swift in Sources */,
 				96A9C0172BD7094900394CBF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

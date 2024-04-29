@@ -107,3 +107,7 @@ extension BuyTicketViewController: UITableViewDataSource {
     }
     
 }
+
+#Preview {
+    BuyTicketViewController(viewModel: iTicketViewModel())
+}

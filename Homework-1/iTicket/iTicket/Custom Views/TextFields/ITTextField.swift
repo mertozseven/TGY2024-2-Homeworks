@@ -40,6 +40,7 @@ class ITTextField: UITextField {
     // MARK: - Private Methods
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
+        autocorrectionType = .no
         clipsToBounds = true
     }
 }

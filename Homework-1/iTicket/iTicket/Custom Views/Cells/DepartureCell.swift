@@ -41,22 +41,22 @@ class DepartureCell: UITableViewCell {
     
     private var fromLabel = ITLabel(
         text: "Nereden",
-        textAlignment: .center,
+        textAlignment: .right,
         textColor: .secondaryLabel,
-        font: .preferredFont(forTextStyle: .body)
+        font: .systemFont(ofSize: 14, weight: .semibold)
     )
     
     private var toLabel = ITLabel(
         text: "Nereye",
-        textAlignment: .center,
+        textAlignment: .left,
         textColor: .secondaryLabel,
-        font: .preferredFont(forTextStyle: .body)
+        font: .systemFont(ofSize: 14, weight: .semibold)
     )
     
     private var toIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "arrow.forward")
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.tintColor = .secondaryLabel
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -125,7 +125,7 @@ class DepartureCell: UITableViewCell {
         ]
         let fromLabelConstraints = [
             fromLabel.topAnchor.constraint(equalTo: busLogo.bottomAnchor, constant: 8),
-            fromLabel.trailingAnchor.constraint(equalTo: toIcon.leadingAnchor, constant: -2),
+            fromLabel.trailingAnchor.constraint(equalTo: toIcon.leadingAnchor, constant: -8),
             fromLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8),
             fromLabel.widthAnchor.constraint(equalToConstant: 128)
         ]
@@ -133,11 +133,11 @@ class DepartureCell: UITableViewCell {
             toIcon.topAnchor.constraint(equalTo: busLogo.bottomAnchor, constant: 8),
             toIcon.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             toIcon.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8),
-            toIcon.widthAnchor.constraint(equalToConstant: 16)
+            toIcon.widthAnchor.constraint(equalToConstant: 32)
         ]
         let toLabelConstraints = [
             toLabel.topAnchor.constraint(equalTo: busLogo.bottomAnchor, constant: 8),
-            toLabel.leadingAnchor.constraint(equalTo: toIcon.trailingAnchor, constant: 2),
+            toLabel.leadingAnchor.constraint(equalTo: toIcon.trailingAnchor, constant: 8),
             toLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8),
             toLabel.widthAnchor.constraint(equalToConstant: 128)
         ]

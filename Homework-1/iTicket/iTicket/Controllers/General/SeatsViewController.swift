@@ -39,7 +39,7 @@ class SeatsViewController: UIViewController {
     
     private lazy var buyButton: ITButton = {
         let button = ITButton(
-            backgroundColor: .systemPink,
+            backgroundColor: .accent,
             title: "Satın Al",
             font: .systemFont(ofSize: 24, weight: .semibold)
         )
@@ -189,6 +189,7 @@ class SeatsViewController: UIViewController {
     }
 }
 
+// MARK: - UICollectionViewDelegate Methods
 extension SeatsViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -204,9 +205,7 @@ extension SeatsViewController: UICollectionViewDelegate {
                 viewModel.currentTicket?.seatNumber = selectedSeats.count
                 print("Added \(seatNumber) to selectedSeats")
             } else {
-                let alert = UIAlertController(title: "Maksimum Koltuk Sayısına Ulaşıldı", message: "Lütfen en fazla 5 koltuk seçiniz.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Tamam", style: .default, handler: nil))
-                present(alert, animated: true, completion: nil)
+                presentITAlertOnMainThread(alertTitle: "Maksimum Koltuk Sayısına Ulaşıldı ✋🏻", message: "Lütfen en fazla 5 koltuk seçiniz.", buttonTitle: "Tamam")
             }
         } else if let index = selectedSeats.firstIndex(of: busSeatNumDict[indexPath.row] ?? "") {
             cell.containerView.backgroundColor = .systemGreen
@@ -220,6 +219,7 @@ extension SeatsViewController: UICollectionViewDelegate {
     
 }
 
+// MARK: - UICollectionViewDataSource Methods
 extension SeatsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -243,6 +243,7 @@ extension SeatsViewController: UICollectionViewDataSource {
     
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout Methods
 extension SeatsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

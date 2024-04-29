@@ -15,7 +15,6 @@ struct Ticket {
     var seatNumber: Int?
     var from: String
     var to: String
-
 }
 
 struct Passenger {

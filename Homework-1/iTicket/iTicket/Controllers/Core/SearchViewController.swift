@@ -15,7 +15,7 @@ class SearchViewController: UIViewController {
     // MARK: - UI Components
     private var topGradientLayer: CAGradientLayer = {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.systemPink.cgColor, UIColor.clear.cgColor]
+        gradientLayer.colors = [UIColor.accent.cgColor, UIColor.clear.cgColor]
         gradientLayer.locations = [0.0, 1.0]
         gradientLayer.frame = CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.5)
         
@@ -234,8 +234,14 @@ class SearchViewController: UIViewController {
     
     // MARK: - Objective Methods
     @objc private func searchButtonAction() {
-        guard let name = nameTextField.text, !name.isEmpty else { return }
-        guard let surname = surnameTextField.text, !surname.isEmpty else { return }
+        guard let name = nameTextField.text, !name.isEmpty else {
+            presentITAlertOnMainThread(alertTitle: "İsim Giriniz 💁🏻‍♂️", message: "İsim alanı boş bırakılamaz lütfen isim giriniz.", buttonTitle: "Tamam")
+            return
+        }
+        guard let surname = surnameTextField.text, !surname.isEmpty else {
+            presentITAlertOnMainThread(alertTitle: "Soy İsim Giriniz 💁🏻‍♂️", message: "Soy isim alanı boş bırakılamaz lütfen soy isim giriniz.", buttonTitle: "Tamam")
+            return
+        }
         let fromIndex = fromCityView.citySelectionPicker.selectedRow(inComponent: 0)
         let toIndex = toCityView.citySelectionPicker.selectedRow(inComponent: 0)
         let fromCity = Constants.cities[fromIndex]
@@ -260,7 +266,11 @@ class SearchViewController: UIViewController {
         )
         viewModel.currentTicket = ticket
         let buyTicketVC = BuyTicketViewController(viewModel: viewModel)
-        navigationController?.pushViewController(buyTicketVC, animated: true)
+        if fromCity == toCity {
+            presentITAlertOnMainThread(alertTitle: "Farklı Şehirler Seçiniz 🏙️", message: "Aynı şehir içinde gidemezsiniz lütfen farklı şehirler seçiniz.", buttonTitle: "Tamam")
+        } else {
+            navigationController?.pushViewController(buyTicketVC, animated: true)
+        }
     }
     
 }
