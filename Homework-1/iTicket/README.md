@@ -10,6 +10,7 @@ Bus ticket app made with UIKIT Programmatically.
 - QR Code Generator
 - Light/dark mode
 - No 3rd party packages
+- UserDefaults for saving the data
 
 ## Nice Have
 
