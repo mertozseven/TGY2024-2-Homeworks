@@ -261,7 +261,7 @@ class MyRoutesCell: UITableViewCell {
             seatTitleLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: padding),
             seatTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             seatTitleLabel.heightAnchor.constraint(equalToConstant: 24),
-            seatTitleLabel.widthAnchor.constraint(equalToConstant: 144)
+            seatTitleLabel.widthAnchor.constraint(equalToConstant: 180)
         ]
         let seatLabelConstraints = [
             seatLabel.topAnchor.constraint(equalTo: seatTitleLabel.bottomAnchor, constant: padding / 2),
