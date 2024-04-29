@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Ticket {
+struct Ticket: Encodable, Decodable {
     var passenger: Passenger
     var date: String
     var hour: Hour?
@@ -17,13 +17,13 @@ struct Ticket {
     var to: String
 }
 
-struct Passenger {
+struct Passenger: Encodable, Decodable {
     var name: String
     var surname: String
     var id: String
 }
 
-struct Hour {
+struct Hour: Encodable, Decodable {
     var hour: Int
     var minute: Int
 }

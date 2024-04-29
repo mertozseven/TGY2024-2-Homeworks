@@ -87,6 +87,11 @@ class MyRoutesViewController: UIViewController {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Biletlerim"
+        if let savedTicketsData = UserDefaults.standard.data(forKey: "tickets") {
+            if let savedTickets = try? JSONDecoder().decode([Ticket].self, from: savedTicketsData) {
+                viewModel.tickets = savedTickets
+            }
+        }
     }
     
     private func configureEmptyView() {

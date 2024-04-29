@@ -167,6 +167,9 @@ class SeatsViewController: UIViewController {
     @objc private func buyButtonTapped() {
         if let currentTicket = viewModel.currentTicket {
             viewModel.tickets.append(currentTicket)
+            if let encodedData = try? JSONEncoder().encode(viewModel.tickets) {
+                UserDefaults.standard.set(encodedData, forKey: "tickets")
+            }
         }
         printFinalTicketDetails()
         if let mainTabBarController = self.tabBarController as? MainTabBarController {
